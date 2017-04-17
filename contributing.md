@@ -13,3 +13,5 @@ from source import bot_api
 bot_api.groups.get(q='ключевое_слово', count=10, offset=0)
 ```
 Имена методов и аргументов полностью совпадают с теми, что представлены в [официальной документации](https://vk.com/dev/manuals)
+### Config
+Для запуска проекта требуется файл source/cofig/config.cfg, где находятся логин и пароль бота
