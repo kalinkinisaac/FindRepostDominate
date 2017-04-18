@@ -1,6 +1,9 @@
 import vk
 from .config_holder import Config
 
+# Init config
+Config.collect()
+
 # Bot session to create bot_api
 bot_session = vk.AuthSession(
     app_id=Config.app_id,
