@@ -1,0 +1,18 @@
+{
+  "actors": {
+    "name": {
+      "user_login": "",
+      "user_password": ""
+    }
+  },
+  "army": [
+    {
+      "user_login": "",
+      "user_password": ""
+    },
+    {
+      "user_login": "",
+      "user_password": ""
+    }
+  ]
+}
