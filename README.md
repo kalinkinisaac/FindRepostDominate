@@ -1,2 +1,2 @@
-# FindRepostDominate
-VK bot that takes part in public raffle
+# Pharaoh
+VK bot which managing actions of many others accounts
