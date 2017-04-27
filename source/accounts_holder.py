@@ -37,5 +37,8 @@ class Accounts:
         Accounts.com_token = community['token']
         Accounts.app_id = app_config['id']
 
+    @staticmethod
+    def get_app_id():
+        return Accounts.app_id
 
 
