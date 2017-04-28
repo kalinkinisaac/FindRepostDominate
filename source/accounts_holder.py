@@ -19,22 +19,28 @@ class Accounts:
     accounts_path = 'accounts/accounts.acc'
     api_config = None
 
+    com_token = None
+    actors = None
+    army = None
+
     @staticmethod
     def collect():
         # Debug
         config_file = open(Accounts.config_path)
         config_dict = dict(json.loads(config_file.read()))
+        community = config_dict['community']
+
         accounts_file = open(Accounts.accounts_path)
         accounts_dict = dict(json.loads(accounts_file.read()))
 
         app_config = config_dict['app']
-        community = config_dict['community']
-        api_config = config_dict['api']
+        Accounts.community = config_dict['community']
+        Accounts.api_config = config_dict['api']
 
-        actors = accounts_dict['actors']
-        army = accounts_file['army']
+        Accounts.actors = accounts_dict['actors']
+        Accounts.army = accounts_dict['army']
 
-        Accounts.com_token = community['token']
+        Accounts.com_token = community['access_token']
         Accounts.app_id = app_config['id']
 
     @staticmethod

@@ -1,32 +1,23 @@
 import vk
 from .accounts_holder import Accounts
 
-class ApiWrapper():
-    api = None
+
+class ApiWrapper(object):
+
+    _api = None
 
     def __init__(self, login, password):
-        session = vk.AuthSession(app_id=Accounts.get_app_id, user_login=login,\
-                                 user_password=password)
-        self.api = vk.API(session)
+        print(login)
+        session = vk.AuthSession(
+            app_id=Accounts.get_app_id(),
+            user_login=login,
+            user_password=password
+        )
+        self._api = vk.API(session)
 
     def __getattr__(self, method_name):
-        return Request(self, method_name)
+        return self._api.__getattr__(method_name)
 
     def __call__(self, method_name, **method_kwargs):
-        return getattr(self, method_name)(**method_kwargs)
-
-class Request(object):
-    __slots__ = ('_api', '_method_name', '_method_args')
-
-    def __init__(self, api, method_name):
-        self._api = api
-        self._method_name = method_name
-        self._method_args = {}
-
-    def __getattr__(self, method_name):
-        return Request(self._api, self._method_name + '.' + method_name)
-
-    def __call__(self, **method_args):
-        self._method_args = method_args
-        return self._api.session.make_request(self)
+        return self._api(**method_kwargs)
 
