@@ -1,0 +1,8 @@
+dict{
+    ComandName1: list[list1[word1, word2, ..., wordN], list2[word1, word2, ..., wordN], ..., listN[word1, word2, ..., wordN]],
+    ComandName2: list[list1[word1, word2, ..., wordN], list2[word1, word2, ..., wordN], ..., listN[word1, word2, ..., wordN]],
+    .
+    .
+    .
+    ComandNameN: list[list1[word1, word2, ..., wordN], list2[word1, word2, ..., wordN], ..., listN[word1, word2, ..., wordN]]
+}
